@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- FORM VIEW -->
+    <record id="view_craft_stories_page_form" model="ir.ui.view">
+        <field name="name">craft.stories.page.form</field>
+        <field name="model">craft.stories.page</field>
+        <field name="arch" type="xml">
+            <form string="Craft Stories CMS" create="0" delete="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Craft Stories Manager</h1>
+                    </div>
+                    
+                    <notebook>
+                        <!-- PESTAÑA HERO -->
+                        <page string="1. Hero &amp; Marquee" name="hero">
+                            <group>
+                                <group string="Hero Section">
+                                    <field name="hero_est_year"/>
+                                    <field name="hero_title_raw"/>
+                                    <field name="hero_title_pure"/>
+                                    <field name="hero_description"/>
+                                </group>
+                                <group string="Decoración">
+                                    <field name="marquee_text"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- PESTAÑA CAPÍTULOS -->
+                        <page string="2. Chapters" name="chapters">
+                            <field name="chapter_ids">
+                                <list string="Capítulos" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="number_display"/>
+                                    <field name="icon_name"/>
+                                    <field name="fig_label"/>
+                                    <field name="title_main"/>
+                                    <field name="image_filename" column_invisible="True"/>
+                                    <field name="image" widget="binary" filename="image_filename" options="{'accepted_file_extensions': '.png,.jpg,.jpeg,.webp'}"/>
+                                </list>
+                                <!-- Formulario Detallado del Capítulo -->
+                                <form>
+                                    <group>
+                                        <group string="Identificadores">
+                                            <field name="sequence"/>
+                                            <field name="number_display"/>
+                                            <field name="fig_label"/>
+                                            <field name="icon_name"/>
+                                            <field name="label_top"/>
+                                        </group>
+                                        <group string="Contenido">
+                                            <field name="title_main"/>
+                                            <field name="title_italic"/>
+                                            <field name="description"/>
+                                            <field name="features_list" placeholder="Elemento 1&#10;Elemento 2..."/>
+                                        </group>
+                                        <group string="Media">
+                                            <field name="image" widget="image"/>
+                                            <field name="video_url"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+
+                        <!-- PESTAÑA BENTO GRID -->
+                        <page string="3. Science (Bento)" name="bento">
+                            <field name="bento_ids">
+                                <list string="Grid Cards" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="icon_name"/>
+                                    <field name="title"/>
+                                    <field name="description"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <!-- PESTAÑA FOOTER -->
+                        <page string="4. Quote &amp; Footer" name="footer">
+                            <group>
+                                <field name="quote_text"/>
+                                <field name="quote_author"/>
+                                <separator string="Footer Call to Action"/>
+                                <field name="footer_next_chapter"/>
+                                <field name="footer_cta_text"/>
+                                <field name="footer_link"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_craft_stories_config" model="ir.actions.act_window">
+        <field name="name">Craft Stories Config</field>
+        <field name="res_model">craft.stories.page</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="craft_stories.main_craft_page"/> 
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_craft_root" name="CRAFT STORIES" sequence="60"/>
+    <menuitem id="menu_craft_config" name="Configuration" parent="menu_craft_root" action="action_craft_stories_config" sequence="1"/>
+
+</odoo>

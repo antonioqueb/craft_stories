@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record id="main_craft_page" model="craft.stories.page">
+            <field name="hero_est_year">Est. 2024</field>
+            <field name="hero_title_raw">Raw Matter.</field>
+            <field name="hero_title_pure">Pure Form.</field>
+            <field name="hero_description">We explore the intersection of geological chaos and human precision. A curated journey from the earth's core to your living space.</field>
+            <field name="quote_text">"We do not design the texture of the stone. We merely organize the light that falls upon it."</field>
+        </record>
+
+        <!-- Chapter 1 -->
+        <record id="chapter_01" model="craft.stories.chapter">
+            <field name="page_id" ref="main_craft_page"/>
+            <field name="sequence">1</field>
+            <field name="number_display">01</field>
+            <field name="fig_label">Fig 01. Extraction</field>
+            <field name="icon_name">mountain</field>
+            <field name="label_top">The Origin</field>
+            <field name="title_main">Selected from</field>
+            <field name="title_italic">the Source</field>
+            <field name="description">Every narrative begins in the quarry. Our geologists travel to remote locations, seeking veins of character that tell a million-year-old story.</field>
+            <field name="features_list">Ethical Sourcing Standards
+Geological Rarity Assessment</field>
+        </record>
+
+        <!-- Chapter 2 -->
+        <record id="chapter_02" model="craft.stories.chapter">
+            <field name="page_id" ref="main_craft_page"/>
+            <field name="sequence">2</field>
+            <field name="number_display">02</field>
+            <field name="fig_label">Fig 02. Precision</field>
+            <field name="icon_name">hammer</field>
+            <field name="label_top">The Shaping</field>
+            <field name="title_main">Violence becomes</field>
+            <field name="title_italic">Silence</field>
+            <field name="description">The process of cutting stone is violent, but the result is peace. Our artisans use diamond-tipped precision to slice through density.</field>
+        </record>
+
+        <!-- Bento Grid -->
+        <record id="bento_1" model="craft.stories.bento">
+            <field name="page_id" ref="main_craft_page"/>
+            <field name="sequence">1</field>
+            <field name="icon_name">clock</field>
+            <field name="title">Deep Time</field>
+            <field name="description">Materials dating back to the Proterozoic eon, ensuring stability and historical weight.</field>
+        </record>
+
+        <record id="bento_2" model="craft.stories.bento">
+            <field name="page_id" ref="main_craft_page"/>
+            <field name="sequence">2</field>
+            <field name="icon_name">gem</field>
+            <field name="title">Mohs Hardness</field>
+            <field name="description">Selected stones with ratings above 6.0, guaranteeing longevity against daily wear.</field>
+        </record>
+
+        <record id="bento_3" model="craft.stories.bento">
+            <field name="page_id" ref="main_craft_page"/>
+            <field name="sequence">3</field>
+            <field name="icon_name">microscope</field>
+            <field name="title">Micro-Finish</field>
+            <field name="description">Sealed at a microscopic level to repel oils while maintaining natural texture.</field>
+        </record>
+
+    </data>
+</odoo>
