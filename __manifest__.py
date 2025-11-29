@@ -13,8 +13,9 @@
     'depends': ['base', 'web'],
     'data': [
         'security/ir.model.access.csv',
-        'views/cms_views.xml',
         'data/cms_data.xml',
+        'views/cms_views.xml',
+        
     ],
     'installable': True,
     'application': True,
