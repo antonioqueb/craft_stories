@@ -2,7 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_craft_stories_page,craft.stories.page,model_craft_stories_page,base.group_user,1,1,1,1
 access_craft_stories_chapter,craft.stories.chapter,model_craft_stories_chapter,base.group_user,1,1,1,1
 access_craft_stories_bento,craft.stories.bento,model_craft_stories_bento,base.group_user,1,1,1,1
-# Permisos Públicos (Solo lectura para la API)
 access_craft_stories_page_pub,craft.stories.page public,model_craft_stories_page,base.group_public,1,0,0,0
 access_craft_stories_chapter_pub,craft.stories.chapter public,model_craft_stories_chapter,base.group_public,1,0,0,0
 access_craft_stories_bento_pub,craft.stories.bento public,model_craft_stories_bento,base.group_public,1,0,0,0
